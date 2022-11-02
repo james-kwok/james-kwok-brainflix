@@ -1,0 +1,27 @@
+@use 'styles/partials/colors' as *;
+@use 'styles/partials/breakpoints' as *;
+@use 'styles/partials/typography' as *;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $site-font-family;
+    margin: 0;
+}
+
+input {
+    &::placeholder {
+    font-family: $site-font-family;
+    font-size: $body-size-mobile;
+    font-weight: $body-weight-mobile;
+    line-height: $body-line-height-mobile;
+
+        @include tablet {
+            font-size: $body-size;
+            font-weight: $body-weight;
+            line-height: $body-line-height;
+        }
+    }
+}
