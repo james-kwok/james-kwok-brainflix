@@ -1,0 +1,23 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/breakpoints' as *;
+@use '../../styles/partials/typography' as *;
+
+.hero {
+    background-color: $secondary-black;
+    display: flex;
+
+    &__video {
+        width: 100%;
+        aspect-ratio: 16/9;
+
+        @include tablet {
+            max-height: 24.6875rem;
+        }
+
+        @include desktop {
+            max-height: 29.9375rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+    }
+}
