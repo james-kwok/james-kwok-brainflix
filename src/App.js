@@ -1,4 +1,4 @@
-import Navigation from './component/Component/Navigation.jsx';
+import Navigation from './component/Navigation/Navigation.jsx';
 import './App.scss';
 
 function App() {
