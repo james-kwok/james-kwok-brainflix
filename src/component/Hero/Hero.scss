@@ -6,17 +6,27 @@
     background-color: $secondary-black;
     display: flex;
 
+    @include tablet {
+        padding: 0 2.25rem;
+    }
+
+    @include desktop {
+        padding: 0;
+    }
+
     &__video {
         width: 100%;
         aspect-ratio: 16/9;
 
         @include tablet {
-            max-height: 24.6875rem;
+            width: 43.5625rem;
+            height: 24.5625rrem;
+            margin: 0 auto;
         }
 
         @include desktop {
-            max-height: 29.9375rem;
-            max-width: 1280px;
+            height: 29.75rem;
+            width: 52.875rem;
             margin: 0 auto;
         }
     }
