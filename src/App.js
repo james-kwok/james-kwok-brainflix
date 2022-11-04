@@ -1,6 +1,7 @@
 import Navigation from './component/Navigation/Navigation.jsx';
 import Hero from './component/Hero/Hero.jsx';
 import VideoDetails from './component/VideoDetails/VideoDetails.jsx';
+import Form from './component/Form/Form.jsx';
 import Comments from './component/Comments/Comments.jsx';
 import displayDetails from './data/video-details.json';
 import { useState } from "react";
@@ -15,6 +16,7 @@ function App() {
         <Navigation />
         <Hero />
         <VideoDetails displayVideo = {displayVideo}/>
+        <Form />
         <Comments displayVideo = {displayVideo}/>
     </>
     );

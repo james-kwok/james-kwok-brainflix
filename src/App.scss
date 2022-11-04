@@ -11,6 +11,13 @@ body {
     margin: 0;
 }
 
+a {
+    font-size: $labels-buttons-size;
+    font-weight: $body-weight;
+    line-height: $labels-buttons-line-height;
+    color: $primary-white;
+}
+
 input {
     &::placeholder {
     font-family: $site-font-family;
@@ -24,6 +31,47 @@ input {
             line-height: $body-line-height;
         }
     }
+}
+
+label {
+    font-family: $site-font-family;
+    font-size: $body-size-mobile;
+    font-weight: $body-weight-mobile;
+    line-height: $body-line-height-mobile;
+    text-transform: uppercase;
+
+    @include tablet {
+        font-size: $body-size;
+        font-weight: $body-weight;
+        line-height: $body-line-height;
+    }
+}
+
+textarea {
+    font-family: $site-font-family;
+    font-size: $body-size-mobile;
+    font-weight: $body-weight-mobile;
+    line-height: $body-line-height-mobile;
+
+        @include tablet {
+            font-size: $body-size;
+            font-weight: $body-weight;
+            line-height: $body-line-height;
+        }
+}
+
+button {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    background: none;
+    border: none;
+    border-radius: 0.25rem;
+    text-transform: uppercase;
+    font-size: $labels-buttons-size;
+    font-weight: $body-weight;
+    line-height: $labels-buttons-line-height;
+    color: $primary-white;
 }
 
 h1, h2, h3, p, span {
