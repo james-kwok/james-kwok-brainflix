@@ -3,12 +3,6 @@ import "./Comments.scss";
 const Comments = ({ displayVideo }) => {
   const { comments } = displayVideo;
 
-  //   const convertTimestamp = new Date(comments.timestamp).toLocaleDateString("en-US", {
-  //     year: "numeric",
-  //     month: "2-digit",
-  //     day: "2-digit",
-  // });
-
   return (
     <div className="comments">
       {displayVideo.comments.map((comments) => {
