@@ -1,128 +1,132 @@
-@use '../../styles/partials/colors' as *;
-@use '../../styles/partials/breakpoints' as *;
-@use '../../styles/partials/typography' as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/typography" as *;
 
-.nav {
-    padding: 1rem;
+.Nav {
+  padding: 1rem;
+
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 1rem 2.25rem;
+    height: 4.4375rem;
+  }
+
+  @include desktop {
+    height: 4.5rem;
+    padding: 1rem 0;
+    max-width: 1020px;
+    margin: auto;
+  }
+
+  &__logo {
+    display: flex;
+    margin: 0 auto;
+    height: 1.5625rem;
+    width: 7.5rem;
 
     @include tablet {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        padding: 1rem 2.25rem;
-        height: 4.4375rem;
+      margin: auto 0;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 1rem;
+
+    @include tablet {
+      flex-wrap: nowrap;
+      justify-content: space-evenly;
+      margin: 0;
+    }
+  }
+
+  &__search {
+    flex-grow: 1;
+  }
+
+  &__search-bar {
+    height: 100%;
+    display: flex;
+    background-color: $secondary-white;
+    border-radius: 0.25rem;
+    border: 1px solid $secondary-silver;
+
+    @include tablet {
+      height: 2.5rem;
+      width: 15rem;
+      margin-right: 1.5rem;
+    }
+  }
+
+  &__search-input {
+    width: 100%;
+    background-color: $secondary-white;
+    border: none;
+    outline: none;
+  }
+
+  &__search-icon {
+    height: 1.25rem;
+    width: 1.25rem;
+    margin: auto 0.75rem;
+
+    @include tablet {
+      margin: auto 1rem;
+    }
+  }
+
+  &__avatar {
+    height: 2.25rem;
+    width: 2.25rem;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 15% 50%;
+    margin-left: 1rem;
+
+    @include tablet {
+      height: 2.5rem;
+      width: 2.5rem;
+      order: 1;
+      margin-left: 0;
+    }
+  }
+
+  &__button-wrapper {
+    display: flex;
+    height: 2.5rem;
+    width: 100%;
+    margin-top: 1rem;
+    background-color: $primary-blue;
+    border-radius: 4px;
+    padding-right: 3rem;
+
+    @include tablet {
+      width: 9.375rem;
+      margin-top: 0;
+      margin-right: 1.5rem;
+      padding-right: 2.25rem;
     }
 
     @include desktop {
-        height: 4.5rem;
-        padding: 1rem 0;
-        max-width: 1020px;
-        margin: auto;
+      margin-right: 2rem;
     }
+  }
 
-    &__logo {
-        display: flex;
-        margin: 0 auto;
-        height: 1.5625rem;
-        width: 7.5rem;
+  &__button-icon {
+    height: 1.25rem;
+    width: 1.25rem;
+    margin: auto 0.75rem;
+  }
 
-        @include tablet {
-            margin: auto 0;
-        }
-    }
-
-    &__items {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin-top: 1rem;
-
-        @include tablet {
-            flex-wrap: nowrap;
-            justify-content: space-evenly;
-            margin: 0;
-        }
-    }
-
-    &__search {
-        flex-grow: 1;
-    }
-
-    &__search-bar {
-        height: 100%;
-        display: flex;
-        background-color: $secondary-white;
-        border-radius: 0.25rem;
-        border: 1px solid $secondary-silver;
-
-        @include tablet {
-            height: 2.5rem;
-            width: 15rem;
-            margin-right: 1.5rem;
-        }
-    }
-
-    &__search-input {
-        width: 100%;
-        background-color: $secondary-white;
-        border: none;
-        outline: none;
-    }
-
-    &__search-icon {
-        height: 1.25rem;
-        width: 1.25rem;
-        margin: auto 0.75rem;
-    }
-
-    &__avatar {
-        height: 2.25rem;
-        width: 2.25rem;
-        border-radius: 50%;
-        object-fit: cover;
-        object-position: 15% 50%;
-        margin-left: 1rem;
-
-        @include tablet {
-            height: 2.5rem;
-            width: 2.5rem;
-            order: 1;
-            margin-left: 0;
-        }
-    }
-
-    &__button-wrapper {
-        display: flex;
-        height: 2.5rem;
-        width: 100%;
-        margin-top: 1rem;
-        background-color: $primary-blue;
-        border-radius: 4px;
-        padding-right: 3rem;
-
-        @include tablet {
-            width: 9.375rem;
-            margin-top: 0;
-            margin-right: 1.5rem;
-            padding-right: 1.6625rem;
-        }
-
-        @include desktop {
-            margin-right: 2rem;
-        }
-    }
-
-    &__button-icon {
-        height: 1.5rem;
-        width: 1.5rem;
-        margin: auto 0.75rem;
-    }
-
-    &__button {
-        margin: auto;
-        font-size: $labels-buttons-size;
-        line-height: $labels-buttons-line-height;
-        text-transform: uppercase;
-        color: $primary-white;
-    }
+  &__button {
+    margin: auto;
+    font-size: $labels-buttons-size;
+    line-height: $labels-buttons-line-height;
+    text-transform: uppercase;
+    color: $primary-white;
+  }
 }

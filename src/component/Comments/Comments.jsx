@@ -4,21 +4,21 @@ const Comments = ({ displayVideo }) => {
   const { comments } = displayVideo;
 
   return (
-    <div className="comments">
-      {displayVideo.comments.map((comments) => {
+    <div className="Comments">
+      {comments.map((comments) => {
         return (
-          <div className="comments__card" key={comments.id}>
-            <div className="comments__placeholder"></div>
-            <div className="comments__text-container">
-              <p className="comments__name">{comments.name}</p>
-              <p className="comments__timestamp">
+          <div className="Comments__card" key={comments.id}>
+            <div className="Comments__placeholder"></div>
+            <div className="Comments__text-container">
+              <p className="Comments__name">{comments.name}</p>
+              <p className="Comments__timestamp">
                 {new Date(comments.timestamp).toLocaleDateString("en-US", {
                   year: "numeric",
                   month: "2-digit",
                   day: "2-digit",
                 })}
               </p>
-              <p className="comments__comment-text">{comments.comment}</p>
+              <p className="Comments__comment-text">{comments.comment}</p>
             </div>
           </div>
         );

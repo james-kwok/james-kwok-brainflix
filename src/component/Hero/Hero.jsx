@@ -2,10 +2,11 @@ import "./Hero.scss";
 
 const Hero = ({ displayVideo }) => {
   return (
-    <div className="hero">
+    <div className="Hero">
       <video
-        className="hero__video"
+        className="Hero__video"
         poster={displayVideo.image}
+        alt={displayVideo.title}
         controls
       ></video>
     </div>

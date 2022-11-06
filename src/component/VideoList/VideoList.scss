@@ -1,90 +1,88 @@
-@use '../../styles/partials/colors' as *;
-@use '../../styles/partials/breakpoints' as *;
-@use '../../styles/partials/typography' as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/typography" as *;
 
 .VideoList {
-    padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem;
+
+  @include tablet {
+    padding: 0 2.25rem;
+  }
+
+  @include desktop {
+    padding: 2.25rem 0 4.375rem 1.5rem;
+    max-width: 20.3rem;
+    border-left: 1px solid $secondary-silver;
+  }
+
+  &__heading {
+    font-family: $site-font-family;
+    font-size: $body-size-mobile;
+    font-weight: $body-weight-mobile;
+    line-height: $body-line-height-mobile;
+    text-transform: uppercase;
+    color: $primary-silver;
 
     @include tablet {
-        padding: 0 2.25rem;
+      font-size: $body-size;
+      font-weight: $body-weight;
+      line-height: $body-line-height;
+    }
+  }
+
+  &__container {
+    display: flex;
+    margin: 1rem 0;
+
+    @include tablet {
+      margin: 1.5rem 0;
+    }
+  }
+
+  &__image {
+    height: 3.75rem;
+    width: 6.3125rem;
+    border-radius: 0.25rem;
+    object-fit: cover;
+
+    @include tablet {
+      height: 4.0625rem;
+      width: 6.875rem;
     }
 
     @include desktop {
-        padding: 2.25rem 0 4.375rem 1.5rem;
-        max-width: 20.3rem;
-        border-left: 1px solid $secondary-silver;
+      height: 4.0625rem;
+      width: 6.6875rem;
     }
+  }
 
-    &__heading {
-        font-family: $site-font-family;
-        font-size: $body-size-mobile;
-        font-weight: $body-weight-mobile;
-        line-height: $body-line-height-mobile;
-        text-transform: uppercase;
-        color: $primary-silver;
-    
-        @include tablet {
-            font-size: $body-size;
-            font-weight: $body-weight;
-            line-height: $body-line-height;
-        }
+  &__text-container {
+    display: grid;
+    margin-left: 1rem;
+    width: 10.625rem;
+  }
+
+  &__title {
+    font-size: $body-size-mobile;
+    font-weight: $labels-buttons-weight;
+    line-height: $body-line-height-mobile;
+    color: $primary-black;
+
+    @include tablet {
+      font-size: $body-size;
+      line-height: $body-line-height;
     }
+  }
 
-    &__container {
-        display: flex;
-        margin: 1rem 0;
+  &__channel {
+    font-size: $body-size-mobile;
+    font-weight: $body-weight;
+    line-height: $body-line-height-mobile;
+    color: $primary-black;
 
-        @include tablet {
-            margin: 1.5rem 0;
-        }
+    @include tablet {
+      font-size: $body-size;
+      line-height: $body-line-height;
     }
-
-    &__image {
-        height: 3.75rem;
-        width: 6.3125rem;
-        border-radius: 0.25rem;
-        object-fit: cover;
-
-        @include tablet {
-            height: 4.0625rem;
-            width: 6.875rem;
-        }
-
-        @include desktop {
-            height: 4.0625rem;
-            width: 6.6875rem;
-        }
-    }
-
-    &__text-container {
-        display: grid;
-        margin-left: 1rem;
-        width: 10.625rem;
-    }
-
-    &__title {
-        font-size: $body-size-mobile;
-        font-weight: $labels-buttons-weight;
-        line-height: $body-line-height-mobile;
-        color: $primary-black;
-      
-
-        @include tablet {
-            font-size: $body-size;
-            line-height: $body-line-height;
-        }
-    }
-
-    &__channel {
-        font-size: $body-size-mobile;
-        font-weight: $body-weight;
-        line-height: $body-line-height-mobile;
-        color: $primary-black;
-      
-
-        @include tablet {
-            font-size: $body-size;
-            line-height: $body-line-height;
-        }
-    }
+  }
 }

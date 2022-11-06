@@ -6,23 +6,23 @@ import "./Navigation.scss";
 
 const Navigation = () => {
   return (
-    <div className="nav">
-      <img className="nav__logo" src={navLogo} />
-      <div className="nav__items">
-        <div className="nav__search">
-          <div className="nav__search-bar">
-            <img className="nav__search-icon" src={searchIcon} />
+    <div className="Nav">
+      <img className="Nav__logo" src={navLogo} />
+      <div className="Nav__items">
+        <div className="Nav__search">
+          <div className="Nav__search-bar">
+            <img className="Nav__search-icon" src={searchIcon} />
             <input
-              className="nav__search-input"
+              className="Nav__search-input"
               type="text"
               placeholder="Search"
             />
           </div>
         </div>
-        <img className="nav__avatar" src={avatar} />
-        <div className="nav__button-wrapper">
-          <img className="nav__button-icon" src={uploadIcon} />
-          <a className="nav__button">Upload</a>
+        <img className="Nav__avatar" src={avatar} />
+        <div className="Nav__button-wrapper">
+          <img className="Nav__button-icon" src={uploadIcon} />
+          <a className="Nav__button">Upload</a>
         </div>
       </div>
     </div>
