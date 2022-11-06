@@ -7,11 +7,17 @@ import "./Navigation.scss";
 const Navigation = () => {
   return (
     <div className="Nav">
-      <img className="Nav__logo" src={navLogo} />
+      <a href="/">
+        <img className="Nav__logo" src={navLogo} alt="BrainFlix-Logo" />
+      </a>
       <div className="Nav__items">
         <div className="Nav__search">
           <div className="Nav__search-bar">
-            <img className="Nav__search-icon" src={searchIcon} />
+            <img
+              className="Nav__search-icon"
+              src={searchIcon}
+              alt="Search-Icon"
+            />
             <input
               className="Nav__search-input"
               type="text"
@@ -21,7 +27,11 @@ const Navigation = () => {
         </div>
         <img className="Nav__avatar" src={avatar} />
         <div className="Nav__button-wrapper">
-          <img className="Nav__button-icon" src={uploadIcon} />
+          <img
+            className="Nav__button-icon"
+            src={uploadIcon}
+            alt="Upload-Icon"
+          />
           <a className="Nav__button">Upload</a>
         </div>
       </div>
