@@ -1,8 +1,15 @@
 import "./VideoList.scss";
 
 const VideoList = ({ displayVideoList, changeVideo, updateVideoList }) => {
+
+  // Copying a new array to render the VideoeList without index 0..
+  // There might be a better way to do this, but I ran out of time
+
   let nonSelectedVideos = [...displayVideoList];
   nonSelectedVideos.splice(0, 1);
+
+  // The onClick event will listen for clicks on each video's container element..
+  // Then run two functions to dynamically update the components within Section.
 
   return (
     <div className="VideoList">

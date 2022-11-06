@@ -2,6 +2,8 @@ import "./Form.scss";
 import avatar from "../../assets/images/Mohan-muruge.jpg";
 import commentIcon from "../../assets/icons/add_comment.svg";
 
+// separated the Form component to anticipate for future builds that may have additional form fields
+
 const Form = () => {
   return (
     <div className="Form">

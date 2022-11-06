@@ -1,9 +1,11 @@
 import "./Comments.scss";
 
 const Comments = ({ displayVideo }) => {
+  // array destructuring to pull out comments array
   const { comments } = displayVideo;
 
   return (
+    // map method to return comment cards based on comment array length
     <div className="Comments">
       {comments.map((comments) => {
         return (

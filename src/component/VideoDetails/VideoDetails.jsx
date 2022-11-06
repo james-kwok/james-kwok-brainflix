@@ -2,6 +2,9 @@ import viewsIcon from "../../assets/icons/views.svg";
 import likesIcon from "../../assets/icons/likes.svg";
 import "./VideoDetails.scss";
 
+// This component is to render each video's details page, 
+// the onClick trigger in the VideoList component will cause this component to render data dynamically.
+
 const VideoDetails = ({ displayVideo }) => {
   const videoTimestamp = new Date(displayVideo.timestamp).toLocaleDateString(
     "en-US",
