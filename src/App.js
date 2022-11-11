@@ -8,7 +8,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<VideoPage />} />
-        <Route path="videos/:id" element={<VideoPage />} />
+        <Route path="videos/:videoId" element={<VideoPage />} />
         {/* <Route path="/upload" element={<UploadPage />} /> */}
       </Routes>
     </BrowserRouter>
