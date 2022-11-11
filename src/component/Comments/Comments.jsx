@@ -1,13 +1,11 @@
 import "./Comments.scss";
 
-const Comments = ({ displayVideo }) => {
-  // array destructuring to pull out comments array
-  const { comments } = displayVideo;
+const Comments = ({ featuredComments }) => {
 
   return (
     // map method to return comment cards based on comment array length
     <div className="Comments">
-      {comments.map((comments) => {
+      {featuredComments.map((comments) => {
         return (
           <div className="Comments__card" key={comments.id}>
             <div className="Comments__placeholder"></div>

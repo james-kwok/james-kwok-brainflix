@@ -2,11 +2,8 @@ import viewsIcon from "../../assets/icons/views.svg";
 import likesIcon from "../../assets/icons/likes.svg";
 import "./VideoDetails.scss";
 
-// This component is to render each video's details page,
-// the onClick trigger in the VideoList component will cause this component to render data dynamically.
-
-const VideoDetails = ({ displayVideo }) => {
-  const videoTimestamp = new Date(displayVideo.timestamp).toLocaleDateString(
+const VideoDetails = ({featuredVideo}) => {
+  const videoTimestamp = new Date(featuredVideo.timestamp).toLocaleDateString(
     "en-US",
     {
       year: "numeric",
@@ -17,9 +14,9 @@ const VideoDetails = ({ displayVideo }) => {
 
   return (
     <div className="VideoDetails__container">
-      <h1 className="VideoDetails__title">{displayVideo.title}</h1>
+      <h1 className="VideoDetails__title">{featuredVideo.title}</h1>
       <div className="VideoDetails__stats">
-        <p className="VideoDetails__channel">By {displayVideo.channel}</p>
+        <p className="VideoDetails__channel">By {featuredVideo.channel}</p>
         <div className="VideoDetails__views-container">
           <div className="VideoDetails__icon-container">
             <img
@@ -28,7 +25,7 @@ const VideoDetails = ({ displayVideo }) => {
               alt="Views-Icon"
             />
           </div>
-          <p className="VideoDetails__views-text">{displayVideo.views}</p>
+          <p className="VideoDetails__views-text">{featuredVideo.views}</p>
         </div>
         <p className="VideoDetails__timestamp">{videoTimestamp}</p>
         <div className="VideoDetails__likes-container">
@@ -39,12 +36,12 @@ const VideoDetails = ({ displayVideo }) => {
               alt="Likes-Icon"
             />
           </div>
-          <p className="VideoDetails__likes-text">{displayVideo.likes}</p>
+          <p className="VideoDetails__likes-text">{featuredVideo.likes}</p>
         </div>
       </div>
-      <p className="VideoDetails__description">{displayVideo.description}</p>
+      <p className="VideoDetails__description">{featuredVideo.description}</p>
       <p className="VideoDetails__comments">
-        {displayVideo.comments.length} Comments
+        {featuredVideo.comments.length} Comments
       </p>
     </div>
   );

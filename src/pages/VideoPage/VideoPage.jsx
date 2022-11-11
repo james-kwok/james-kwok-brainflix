@@ -1,34 +1,37 @@
+import videosData from "../../data/videos.json";
+import videoDetailsData from "../../data/video-details.json";
+import Navigation from "../../component/Navigation/Navigation";
 import Hero from "../../component/Hero/Hero";
 import Section from "../../component/Section/Section";
-import axios from "axios";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+// import axios from "axios";
 
-const URL = "https://project-2-api.herokuapp.com";
-const key = "3689c5d3-300f-4b3c-af6f-dc866897da95";
+// const URL = "https://project-2-api.herokuapp.com";
+// const key = "3689c5d3-300f-4b3c-af6f-dc866897da95";
 
 const VideoPage = () => {
-  const [video, setVideo] = useState();
-//   const { id, title, channel, image } = video;
-
-  const [featuredVideo, setFeaturedVideo] = useState();
-//   const { description, views, likes, timestamp, comments } = featuredVideo;
+  const { videoId } = useParams();
+  const [videoList] = useState(videosData);
+  const [featuredVideo, setFeaturedVideo] = useState(videoDetailsData[0]);
 
   useEffect(() => {
-    axios.get(`${URL}/videos?api_key=${key}`).then((response) => {
-      setVideo(response.data);
-    });
-  }, [video]);
+    if (!videoId) {
+      return;
+    }
+    const foundVideo = videoDetailsData.find((video) => videoId === video.id);
+    setFeaturedVideo(foundVideo);
+  }, [videoId]);
 
-  useEffect(() => {
-    axios.get(`${URL}/videos/${featuredVideo.id}?api_key=${key}`).then((response) => {
-        setFeaturedVideo(response.data);
-    },[featuredVideo])
-  })
+  const filteredVideos = videoList.filter(
+    (video) => video.id !== featuredVideo.id
+  );
 
   return (
     <>
-      <Hero image={image} />
-      <Section video={video} featuredVideo={featuredVideo} />
+      <Navigation />
+      <Hero image={featuredVideo} />
+      <Section videoList={filteredVideos} featuredVideo={featuredVideo} />
     </>
   );
 };
