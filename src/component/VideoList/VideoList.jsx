@@ -1,13 +1,18 @@
 import "./VideoList.scss";
 import { Link } from "react-router-dom";
 
-const VideoList = ({ videoList }) => {
+const VideoList = ({ filteredVideos }) => {
+  // console.log(filteredVideos);
   return (
     <div className="VideoList">
       <span className="VideoList__heading">Next Videos</span>
-      {videoList.map((video) => {
+      {filteredVideos.map((video, index) => {
         return (
-          <Link className="VideoList__container" to={`/videos/${video.id}`} key={video.id}>
+          <Link
+            to={`/videos/${video.id}`}
+            key={index}
+            className="VideoList__container"
+          >
             <img
               className="VideoList__image"
               src={video.image}
