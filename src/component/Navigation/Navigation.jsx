@@ -2,6 +2,7 @@ import navLogo from "../../assets/logos/BrainFlix-logo.svg";
 import avatar from "../../assets/images/Mohan-muruge.jpg";
 import searchIcon from "../../assets/icons/search.svg";
 import uploadIcon from "../../assets/icons/upload.svg";
+import { Link } from "react-router-dom";
 import "./Navigation.scss";
 
 const Navigation = () => {
@@ -32,7 +33,9 @@ const Navigation = () => {
             src={uploadIcon}
             alt="Upload-Icon"
           />
-          <a className="Nav__button">Upload</a>
+          <Link to="/upload" className="Nav__button">
+            Upload
+          </Link>
         </div>
       </div>
     </div>
