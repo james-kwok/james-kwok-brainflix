@@ -18,6 +18,22 @@ const VideoPage = () => {
       .get(`${URL}/${key}`, {})
       .then((response) => {
         setVideoList(response.data);
+        const id = response.data[0].id
+        return axios.get(`${URL}/${id}/${key}`, {});
+      })
+      .then((response) => {
+        setFeaturedVideo(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get(`${URL}/${key}`, {})
+      .then((response) => {
+        setVideoList(response.data);
         return axios.get(`${URL}/${videoId}/${key}`, {});
       })
       .then((response) => {
