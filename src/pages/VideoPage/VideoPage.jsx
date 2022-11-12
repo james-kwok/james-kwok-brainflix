@@ -17,26 +17,16 @@ const VideoPage = () => {
     axios
       .get(`${URL}/${key}`, {})
       .then((response) => {
-        // console.log(response)
         setVideoList(response.data);
-        const foundVideo = response.data.find((video) => {
-          videoId === video.id;
-        });
-        const id = response.data[0].id || foundVideo.id;
-        return axios.get(`${URL}/${id}/${key}`, {});
+        return axios.get(`${URL}/${videoId}/${key}`, {});
       })
       .then((response) => {
-        // console.log(response)
         setFeaturedVideo(response.data);
       })
       .catch((error) => {
         console.log(error);
       });
   }, [videoId]);
-
-  // console.log(videoId);
-  // console.log(videoList);
-  // console.log(featuredVideo);
 
   if (!videoList || !featuredVideo) {
     return <h1>loading...</h1>;
