@@ -1,6 +1,7 @@
 import Navigation from "../../component/Navigation/Navigation";
 import Hero from "../../component/Hero/Hero";
 import Section from "../../component/Section/Section";
+import LoadingScreen from "../../component/LoadingScreen/LoadingScreen";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -17,24 +18,15 @@ const VideoPage = () => {
     axios
       .get(`${URL}/${key}`, {})
       .then((response) => {
-        setVideoList(response.data);
-        const id = response.data[0].id
-        return axios.get(`${URL}/${id}/${key}`, {});
-      })
-      .then((response) => {
-        setFeaturedVideo(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-
-  useEffect(() => {
-    axios
-      .get(`${URL}/${key}`, {})
-      .then((response) => {
-        setVideoList(response.data);
-        return axios.get(`${URL}/${videoId}/${key}`, {});
+        setTimeout(() => {
+          setVideoList(response.data);
+        }, 1500)
+        const id = response.data[0].id;
+        if (!videoId) {
+          return axios.get(`${URL}/${id}/${key}`);
+        } else {
+          return axios.get(`${URL}/${videoId}/${key}`);
+        }
       })
       .then((response) => {
         setFeaturedVideo(response.data);
@@ -45,7 +37,7 @@ const VideoPage = () => {
   }, [videoId]);
 
   if (!videoList || !featuredVideo) {
-    return <h1>loading...</h1>;
+    return <LoadingScreen />;
   }
 
   const filteredVideos = videoList.filter((video) => {
@@ -56,7 +48,7 @@ const VideoPage = () => {
     <>
       <Navigation />
       <Hero image={featuredVideo} />
-      <Section filteredVideos={filteredVideos} featuredVideo={featuredVideo} />3
+      <Section filteredVideos={filteredVideos} featuredVideo={featuredVideo} />
     </>
   );
 };

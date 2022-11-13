@@ -1,0 +1,27 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/typography" as *;
+
+.LoadingScreen {
+  display: flex;
+  justify-content: center;
+  max-width: 1020px;
+  margin: auto;
+  height: 100vh;
+  background-color: $primary-white;
+  &__logo {
+    margin: auto;
+    height: 2.5rem;
+    width: auto;
+    animation: pulse 1s infinite ease-in-out alternate;
+
+    @keyframes pulse {
+      from {
+        transform: scale(0.75);
+      }
+      to {
+        transform: scale(1.25);
+      }
+    }
+  }
+}
