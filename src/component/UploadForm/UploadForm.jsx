@@ -38,14 +38,14 @@ const UploadForm = () => {
         </div>
       </div>
       <div className="Upload__buttons">
-        <div className="Upload__button-wrapper">
+        <Link to="/success" className="Upload__button-wrapper">
           <img
             className="Upload__button-icon"
             src={uploadIcon}
             alt="Upload-Icon"
           />
           <button className="Upload__button">Publish</button>
-        </div>
+        </Link>
         <div className="Upload__textlink-wrapper">
           <Link to="/" className="Upload__textlink">
             Cancel

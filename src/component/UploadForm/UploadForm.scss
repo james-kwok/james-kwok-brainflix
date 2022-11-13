@@ -186,10 +186,6 @@
     border-radius: 4px;
     margin-top: 1.5rem;
 
-    &:hover {
-      background-color: $secondary-blue;
-    }
-
     @include tablet {
       width: 9.375rem;
       align-items: center;

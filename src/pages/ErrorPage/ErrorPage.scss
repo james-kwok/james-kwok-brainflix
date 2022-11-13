@@ -1,0 +1,87 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/typography" as *;
+
+.Error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+
+  &__title {
+    font-size: $page-header-size-mobile;
+    font-weight: $page-header-weight-mobile;
+    line-height: $page-header-line-height-mobile;
+    text-align: center;
+    padding: 1rem;
+
+    @include tablet {
+        font-size: $page-header-size;
+        font-weight: $page-header-weight;
+        line-height: $page-header-line-height;
+        padding: 0.5rem 2.25rem;
+    }
+
+    @include desktop {
+        max-width: 1020px;
+        padding: 0;
+        margin: 0 auto;
+    }
+  }
+
+  &__message {
+    font-size: $body-size-mobile;
+    font-weight: $body-weight-mobile;
+    line-height: $body-line-height-mobile;
+    text-align: center;
+    padding: 1rem;
+
+    @include tablet {
+      font-size: $body-size;
+      font-weight: $body-weight;
+      line-height: $body-line-height;
+      padding: 0.5rem 2.25rem;
+    }
+
+    @include desktop {
+      max-width: 1020px;
+      padding: 0;
+      margin: 0 auto;
+    }
+  }
+  &__image {
+    width: 50%;
+    margin: 1rem auto;
+
+    @include tablet {
+        width: 25%;
+    }
+  }
+
+  &__button-wrapper {
+    height: 2.5rem;
+    width: 100%;
+    background-color: $primary-white;
+    border: 2px solid $primary-blue;
+    border-radius: 4px;
+
+    &:hover {
+      background-color: $secondary-blue;
+      border: none;
+    }
+
+    @include tablet {
+      margin-top: 0.5rem;
+      width: 9.375rem;
+      margin: 0 auto;
+    }
+  }
+
+  &__button {
+    color: $primary-blue;
+
+    &:hover {
+      color: $primary-white;
+    }
+  }
+}
