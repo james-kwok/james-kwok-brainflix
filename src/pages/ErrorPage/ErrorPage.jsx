@@ -3,6 +3,8 @@ import errorImage from "../../assets/images/error-state.png";
 import Navigation from "../../component/Navigation/Navigation";
 import "./ErrorPage.scss";
 
+// shows an error page when user publishes video from uploadPage
+
 const ErrorPage = () => {
   return (
     <>

@@ -4,7 +4,7 @@ import "./LoadingScreen.scss";
 const LoadingScreen = () => {
   return (
     <div className="LoadingScreen">
-      <img className="LoadingScreen__logo" src={logo} />
+      <img className="LoadingScreen__logo" src={logo} alt="BrainFlix-Logo" />
     </div>
   );
 };

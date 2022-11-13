@@ -3,6 +3,8 @@ import successImage from "../../assets/images/success-state.png";
 import Navigation from "../../component/Navigation/Navigation";
 import "./SuccessPage.scss";
 
+// shows a success page when user publishes video from uploadPage
+
 const SuccessPage = () => {
   return (
     <>

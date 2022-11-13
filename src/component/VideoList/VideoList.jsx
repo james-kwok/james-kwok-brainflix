@@ -2,12 +2,12 @@ import "./VideoList.scss";
 import { Link } from "react-router-dom";
 
 const VideoList = ({ filteredVideos }) => {
-  // console.log(filteredVideos);
   return (
     <div className="VideoList">
       <span className="VideoList__heading">Next Videos</span>
       {filteredVideos.map((video, index) => {
         return (
+          // dynamic routes
           <Link
             to={`/videos/${video.id}`}
             key={index}

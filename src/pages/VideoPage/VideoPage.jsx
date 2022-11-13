@@ -14,10 +14,13 @@ const VideoPage = () => {
   const [videoList, setVideoList] = useState(null);
   const [featuredVideo, setFeaturedVideo] = useState(null);
 
+  // tried using two useEffects at first, but I managed to combine two into one by adding in the if() statement
+
   useEffect(() => {
     axios
       .get(`${URL}/${key}`, {})
       .then((response) => {
+        // intentionally delaying setState for LoadingScreen to simulate data loading
         setTimeout(() => {
           setVideoList(response.data);
         }, 1500)
@@ -39,6 +42,8 @@ const VideoPage = () => {
   if (!videoList || !featuredVideo) {
     return <LoadingScreen />;
   }
+
+  // filtering out the video from videoList that is currently the featuredVideo
 
   const filteredVideos = videoList.filter((video) => {
     return video.id !== featuredVideo.id;

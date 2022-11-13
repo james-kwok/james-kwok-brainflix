@@ -7,6 +7,7 @@ import "./App.scss";
 
 function App() {
   return (
+    // router and routes defined here
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<VideoPage />} />
