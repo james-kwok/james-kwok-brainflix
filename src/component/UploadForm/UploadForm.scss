@@ -168,13 +168,14 @@
   }
 
   &__button-icon {
-    height: 1rem;
-    width: 1rem;
+    height: 1.25rem;
+    width: 1.25rem;
     margin: auto 0.75rem;
   }
 
   &__button {
     margin-right: 2.5rem;
+    cursor: pointer;
   }
 
   &__textlink-wrapper {

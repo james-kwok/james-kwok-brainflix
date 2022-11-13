@@ -16,16 +16,16 @@
     padding: 1rem;
 
     @include tablet {
-        font-size: $page-header-size;
-        font-weight: $page-header-weight;
-        line-height: $page-header-line-height;
-        padding: 0.5rem 2.25rem;
+      font-size: $page-header-size;
+      font-weight: $page-header-weight;
+      line-height: $page-header-line-height;
+      padding: 0.5rem 2.25rem;
     }
 
     @include desktop {
-        max-width: 1020px;
-        padding: 0;
-        margin: 0 auto;
+      max-width: 1020px;
+      padding: 0;
+      margin: 0 auto;
     }
   }
 
@@ -54,7 +54,7 @@
     margin: 1rem auto;
 
     @include tablet {
-        width: 25%;
+      width: 25%;
     }
   }
 
@@ -79,6 +79,7 @@
 
   &__button {
     color: $primary-blue;
+    cursor: pointer;
 
     &:hover {
       color: $primary-white;

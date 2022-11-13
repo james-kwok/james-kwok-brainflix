@@ -79,6 +79,7 @@
 
   &__button {
     color: $primary-blue;
+    cursor: pointer;
 
     &:hover {
       color: $primary-white;

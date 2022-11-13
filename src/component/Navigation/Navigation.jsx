@@ -27,16 +27,16 @@ const Navigation = () => {
           </div>
         </div>
         <img className="Nav__avatar" src={avatar} />
-        <div className="Nav__button-wrapper">
+        <Link to="/upload" className="Nav__button-wrapper">
           <img
             className="Nav__button-icon"
             src={uploadIcon}
             alt="Upload-Icon"
           />
-          <Link to="/upload" className="Nav__button">
+          <button to="/upload" className="Nav__button">
             Upload
-          </Link>
-        </div>
+          </button>
+        </Link>
       </div>
     </div>
   );

@@ -94,6 +94,7 @@
     background-color: $primary-blue;
     border-radius: 4px;
     margin-top: 1rem;
+    cursor: pointer;
 
     &:hover {
       background-color: $secondary-blue;
@@ -113,5 +114,6 @@
 
   &__button {
     margin-right: 2.5rem;
+    cursor: pointer;
   }
 }
