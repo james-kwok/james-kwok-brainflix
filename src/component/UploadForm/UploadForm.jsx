@@ -19,7 +19,7 @@ const UploadForm = () => {
           </div>
           <div className="Upload__right-container">
             <div className="Upload__field">
-              <label for="title" className="Upload__label">
+              <label htmlFor="title" className="Upload__label">
                 Title of your video
               </label>
               <input
@@ -30,7 +30,7 @@ const UploadForm = () => {
               ></input>
             </div>
             <div className="Upload__field Upload__field--border">
-              <label for="description" className="Upload__label">
+              <label htmlFor="description" className="Upload__label">
                 Add a video description
               </label>
               <textarea
