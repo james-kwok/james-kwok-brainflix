@@ -6,29 +6,27 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-const URL = "https://project-2-api.herokuapp.com/videos";
-const key = "?api_key=3689c5d3-300f-4b3c-af6f-dc866897da95";
+// URL for sprint-3
+const URL = "http://localhost:8080/videos";
 
 const VideoPage = () => {
   const { videoId } = useParams();
   const [videoList, setVideoList] = useState(null);
   const [featuredVideo, setFeaturedVideo] = useState(null);
 
-  // tried using two useEffects at first, but I managed to combine two into one by adding in the if() statement
-
   useEffect(() => {
     axios
-      .get(`${URL}/${key}`, {})
+      .get(`${URL}`, {})
       .then((response) => {
         // intentionally delaying setState for LoadingScreen to simulate data loading
         setTimeout(() => {
           setVideoList(response.data);
-        }, 1500)
+        }, 1500);
         const id = response.data[0].id;
         if (!videoId) {
-          return axios.get(`${URL}/${id}/${key}`);
+          return axios.get(`${URL}/${id}`);
         } else {
-          return axios.get(`${URL}/${videoId}/${key}`);
+          return axios.get(`${URL}/${videoId}`);
         }
       })
       .then((response) => {
