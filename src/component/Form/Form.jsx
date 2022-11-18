@@ -17,14 +17,14 @@ const Form = () => {
             name="comment"
           ></textarea>
         </div>
-        <div className="Form__button-wrapper">
+        <button className="Form__button">
           <img
             className="Form__button-icon"
             src={commentIcon}
             alt="Comment-Icon"
           />
-          <button className="Form__button">Comment</button>
-        </div>
+          <span className="Form__button-text">Comment</span>
+        </button>
       </form>
     </div>
   );

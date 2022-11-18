@@ -95,14 +95,18 @@
     }
   }
 
-  &__button-wrapper {
-    display: flex;
+  &__button {
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: $primary-blue;
     height: 2.5rem;
     width: 100%;
-    margin-top: 1rem;
-    background-color: $primary-blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 4px;
-    padding-right: 3rem;
+    padding: 0 0.75rem;
+    margin-top: 1rem;
 
     &:hover {
       background-color: $secondary-blue;
@@ -112,7 +116,6 @@
       width: 9.375rem;
       margin-top: 0;
       margin-right: 1.5rem;
-      padding-right: 2.25rem;
     }
 
     @include desktop {
@@ -121,18 +124,13 @@
   }
 
   &__button-icon {
+    margin-right: auto;
     height: 1.25rem;
     width: 1.25rem;
-    margin: auto 0.75rem;
   }
 
-  &__button {
-    margin: auto;
-    font-size: $labels-buttons-size;
-    line-height: $labels-buttons-line-height;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: $primary-white;
-    cursor: pointer;
+  &__button-text {
+    width: 50%;
+    margin: auto 1.25rem;
   }
 }

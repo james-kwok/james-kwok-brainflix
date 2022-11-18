@@ -62,17 +62,22 @@ textarea {
 }
 
 button {
-  height: 100%;
-  width: 100%;
-  padding-left: 0.25rem;
-  background: none;
-  border: none;
-  border-radius: 0.25rem;
-  text-transform: uppercase;
+  cursor: pointer;
+  font-family: $site-font-family;
   font-size: $labels-buttons-size;
   font-weight: $body-weight;
   line-height: $labels-buttons-line-height;
+  text-transform: uppercase;
   color: $primary-white;
+  height: 2.5rem;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  padding: 0;
+
+  @include tablet {
+    width: 9.375rem;
+  }
 }
 
 h1,

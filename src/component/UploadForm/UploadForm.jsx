@@ -1,6 +1,5 @@
 import thumbnail from "../../assets/images/Upload-video-preview.jpg";
-import uploadIcon from "../../assets/icons/upload.svg";
-import { Link } from "react-router-dom";
+import uploadIcon from "../../assets/icons/publish.svg";
 import { useState } from "react";
 import "./UploadForm.scss";
 import axios from "axios";
@@ -81,9 +80,9 @@ const UploadForm = () => {
               src={uploadIcon}
               alt="Upload-Icon"
             />
-            Publish
+            <span className="Upload__button-text">Publish</span>
           </button>
-          <button className="Upload__textlink-wrapper">Cancel</button>
+          <button className="Upload__textlink nohover">Cancel</button>
         </div>
       </form>
     </div>
