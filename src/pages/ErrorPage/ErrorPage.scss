@@ -58,14 +58,18 @@
     }
   }
 
-  &__button-wrapper {
+  &__button {
+    display: flex;
+    justify-content: center;
     height: 2.5rem;
     width: 100%;
     background-color: $primary-white;
     border: 2px solid $primary-blue;
     border-radius: 4px;
+    color: $primary-blue;
 
     &:hover {
+      color: $primary-white;
       background-color: $secondary-blue;
       border: none;
     }
@@ -77,12 +81,11 @@
     }
   }
 
-  &__button {
-    color: $primary-blue;
+  &__button-text {
+    margin: auto;
+    font-size: $labels-buttons-size;
+    line-height: $labels-buttons-line-height;
+    text-transform: uppercase;
     cursor: pointer;
-
-    &:hover {
-      color: $primary-white;
-    }
   }
 }

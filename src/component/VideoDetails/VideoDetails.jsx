@@ -3,6 +3,7 @@ import likesIcon from "../../assets/icons/likes.svg";
 import "./VideoDetails.scss";
 
 const VideoDetails = ({featuredVideo}) => {
+  // format timestamps
   const videoTimestamp = new Date(featuredVideo.timestamp).toLocaleDateString(
     "en-US",
     {

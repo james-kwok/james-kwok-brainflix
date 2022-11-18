@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import successImage from "../../assets/images/success-state.png";
-import Navigation from "../../component/Navigation/Navigation";
 import "./SuccessPage.scss";
 
 // shows a success page when user publishes video from uploadPage
@@ -8,7 +7,6 @@ import "./SuccessPage.scss";
 const SuccessPage = () => {
   return (
     <>
-      <Navigation />
       <div className="Success">
         <h1 className="Success__title">Upload success! 🥳</h1>
         <p className="Success__message">
@@ -20,8 +18,8 @@ const SuccessPage = () => {
           src={successImage}
           alt="Dog bit the cable"
         />
-        <Link to="/" className="Success__button-wrapper">
-          <button className="Success__button">Take me home</button>
+        <Link to="/" className="Success__button">
+          <p className="Success__button-text">Take me home</p>
         </Link>
       </div>
     </>

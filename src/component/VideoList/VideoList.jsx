@@ -7,7 +7,7 @@ const VideoList = ({ filteredVideos }) => {
       <span className="VideoList__heading">Next Videos</span>
       {filteredVideos.map((video, index) => {
         return (
-          // dynamic routes
+          // dynamic route that will signal the useEFfect on VideoPage to set the clicked video as the featuredVideo
           <Link
             to={`/videos/${video.id}`}
             key={index}

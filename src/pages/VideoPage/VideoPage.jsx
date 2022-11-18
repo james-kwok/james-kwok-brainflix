@@ -1,4 +1,3 @@
-import Navigation from "../../component/Navigation/Navigation";
 import Hero from "../../component/Hero/Hero";
 import Section from "../../component/Section/Section";
 import LoadingScreen from "../../component/LoadingScreen/LoadingScreen";
@@ -22,20 +21,27 @@ const VideoPage = () => {
         setTimeout(() => {
           setVideoList(response.data);
         }, 1500);
+        // storing the initial featuredVideo to load in "id" variable
         const id = response.data[0].id;
+        // if no videos in videoList is clicked, this checks for that and returns the URL with the "id" variable
         if (!videoId) {
           return axios.get(`${URL}/${id}`);
         } else {
           return axios.get(`${URL}/${videoId}`);
         }
       })
+      // response here can be either url depending on user action
       .then((response) => {
+        window.scrollTo(0, 0);
         setFeaturedVideo(response.data);
       })
       .catch((error) => {
         console.log(error);
       });
+      // this useEffect listens to changes in params value
   }, [videoId]);
+
+  // if neither videoList or featuredVideo is loaded, the LoadingScreen component gets served
 
   if (!videoList || !featuredVideo) {
     return <LoadingScreen />;
@@ -49,7 +55,6 @@ const VideoPage = () => {
 
   return (
     <>
-      <Navigation />
       <Hero image={featuredVideo} />
       <Section filteredVideos={filteredVideos} featuredVideo={featuredVideo} />
     </>

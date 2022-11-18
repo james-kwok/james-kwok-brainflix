@@ -1,3 +1,4 @@
+import Navigation from "./component/Navigation/Navigation.jsx";
 import VideoPage from "./pages/VideoPage/VideoPage.jsx";
 import UploadPage from "./pages/UploadPage/UploadPage.jsx";
 import SuccessPage from "./pages/SuccessPage/SuccessPage.jsx";
@@ -9,6 +10,7 @@ function App() {
   return (
     // router and routes defined here
     <BrowserRouter>
+    <Navigation />
       <Routes>
         <Route path="/" element={<VideoPage />} />
         <Route path="videos/:videoId" element={<VideoPage />} />

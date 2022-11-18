@@ -1,30 +1,40 @@
 import thumbnail from "../../assets/images/Upload-video-preview.jpg";
 import uploadIcon from "../../assets/icons/publish.svg";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./UploadForm.scss";
 import axios from "axios";
 
+// using useState hook for controlled inputs
 const UploadForm = () => {
+  // useNavigate hook to handle submit & cancel events
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     title: "",
     description: "",
   });
 
+  // function to handle input in title field
   const handleTitleInput = (e) => {
     setFormData({ ...formData, title: e.target.value });
     console.log(e.target.value);
   };
 
+  // function to handle input in description field
   const handleDescriptionInput = (e) => {
     setFormData({ ...formData, description: e.target.value });
     console.log(e.target.value);
   };
 
+  // function to handle the submit event on form
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
+      // post request to API
       .post("http://localhost:8080/videos", formData)
       .then((response) => {
+        navigate("/success");
         console.log(response);
       })
       .catch((error) => {
@@ -82,7 +92,13 @@ const UploadForm = () => {
             />
             <span className="Upload__button-text">Publish</span>
           </button>
-          <button className="Upload__textlink nohover">Cancel</button>
+          <button
+            type="button"
+            onClick={() => navigate("/")}
+            className="Upload__textlink nohover"
+          >
+            Cancel
+          </button>
         </div>
       </form>
     </div>
